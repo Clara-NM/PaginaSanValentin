@@ -1,0 +1,113 @@
+body {
+    background-color: #fdeff2; /* Rosa clarito */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* 📌 Sección de tareas alineada a la izquierda */
+.tareas {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 220px;
+}
+
+.tareas h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.tareas label {
+    display: block;
+    font-size: 18px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.tareas input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* 📌 Contenedor del bonsái alineado a la izquierda */
+.contenedor-bonsai {
+    position: absolute;
+    left: 50%; /* Alinea el bonsái más a la izquierda */
+    transform: translateX(-60%); /* Centra el bonsái correctamente */
+    top: 50%;
+    transform: translate(-60%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 📌 Contador centrado sobre el bonsái */
+#contador {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* 📌 Diseño del bonsái */
+.circulo {
+    width: 450px;
+    height: 450px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bonsai {
+    position: absolute;
+    max-height: 250px;
+    z-index: 1;
+}
+
+/* 📌 Configuración de la lluvia */
+.rain {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none; /* Evita que la lluvia bloquee clics */
+}
+
+/* Gotas de lluvia */
+.drop {
+    position: absolute;
+    bottom: 100%;
+    width: 2px;
+    height: 90px;
+    background: linear-gradient(to bottom, rgba(13,52,58,1), rgba(255,255,255,0.6));
+    animation: fall 0.6s linear infinite;
+}
+
+/* Animación de caída de la lluvia */
+@keyframes fall {
+    0% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
