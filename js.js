@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const diasDesdeInicioBonsai = Math.floor((fechaActual - fechaInicioBonsai) / (1000 * 60 * 60 * 24));
 
     // Determinar la imagen del bonsái basada en los días transcurridos
-    let imagenNumero = Math.min(diasDesdeInicioBonsai + 1, 3);
+    let imagenNumero = Math.min(diasDesdeInicioBonsai + 1);
     bonsai.src = `bonsai${imagenNumero}.png`;
 
     // Función para generar la lluvia al hacer clic (excepto en checkboxes)
